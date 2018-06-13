@@ -1,0 +1,25 @@
+server:
+  port: 8765
+spring:
+  application:
+    name: consumer-example-ribbon-with-propeties
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://querenjie:123456@localhost:8761/eureka/
+    healthcheck:
+      enabled: true
+    #eureka client刷新本地缓存时间
+    #默认30s
+    registry-fetch-interval-seconds: 5
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
+ribbon:
+  #eureka客户端ribbon刷新时间
+  #默认30s
+  ServerListRefreshInterval: 5000
+#provider-example1就是在eureka服务管理页面中显示的提供者的应用名称，必须是小写的。
+provider-example1:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule

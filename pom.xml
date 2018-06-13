@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.springcloudexample</groupId>
+    <artifactId>spring-cloud-example</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <!--version>2.0.2.RELEASE</version-->
+        <version>1.5.3.RELEASE</version>
+        <relativePath></relativePath> <!-- lookup parent from repository -->
+    </parent>
+
+    <modules>
+        <module>eureka-server</module>
+        <module>provider-example1</module>
+        <module>consumer-example1</module>
+        <module>consumer-example2</module>
+        <module>consumer-example-without-eureka</module>
+        <module>consumer-example-feign</module>
+        <module>consumer-example-feign-customize</module>
+    </modules>
+
+</project>

@@ -1,0 +1,28 @@
+server:
+  port: 8766
+spring:
+  application:
+    name: consumer-example-ribbon-without-eureka
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://querenjie:123456@localhost:8761/eureka/
+    healthcheck:
+      enabled: true
+    #eureka client刷新本地缓存时间
+    #默认30s
+    registry-fetch-interval-seconds: 5
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
+ribbon:
+  #eureka客户端ribbon刷新时间
+  #默认30s
+  ServerListRefreshInterval: 5000
+  #屏蔽eureka
+  eureka:
+    enabled: false
+provider-example1:
+  ribbon:
+    #只访问8762端口的提供者服务
+    listOfServers: localhost:8762
