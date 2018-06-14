@@ -27,6 +27,7 @@
         <module>consumer-example-feign-customize</module>
         <module>consumer-example-eureka-ribbon-hystrix</module>
         <module>consumer-example-eureka-ribbon-hystrix-propagation</module>
+        <module>consumer-example-feign-hystrix</module>
     </modules>
 
 </project>

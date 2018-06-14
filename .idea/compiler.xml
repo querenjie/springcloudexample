@@ -11,6 +11,7 @@
         <module name="consumer-example-eureka-ribbon-hystrix-propagation" />
         <module name="consumer-example-feign" />
         <module name="consumer-example-feign-customize" />
+        <module name="consumer-example-feign-hystrix" />
         <module name="consumer-example-ribbon-with-propeties" />
         <module name="consumer-example-without-eureka" />
         <module name="eureka-server" />
