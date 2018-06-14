@@ -1,0 +1,23 @@
+server:
+  port: 8770
+spring:
+  application:
+    name: consumer-example-eureka-ribbon-hystrix-propagation
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://querenjie:123456@localhost:8761/eureka/
+    healthcheck:
+      enabled: true
+    #eureka client刷新本地缓存时间
+    #默认30s
+    registry-fetch-interval-seconds: 5
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
+ribbon:
+  #eureka客户端ribbon刷新时间
+  #默认30s
+  ServerListRefreshInterval: 5000
+#设定hystrix的超时时间，为了演示响应fallback
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 100

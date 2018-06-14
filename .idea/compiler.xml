@@ -6,14 +6,21 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="consumer-example-eureka-ribbon" />
+        <module name="consumer-example-eureka-ribbon-hystrix" />
+        <module name="consumer-example-eureka-ribbon-hystrix-propagation" />
         <module name="consumer-example-feign" />
         <module name="consumer-example-feign-customize" />
+        <module name="consumer-example-ribbon-with-propeties" />
         <module name="consumer-example-without-eureka" />
-        <module name="consumer-example1" />
-        <module name="consumer-example2" />
         <module name="eureka-server" />
         <module name="provider-example1" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="consumer-example-euraka-ribbon" target="1.8" />
+      <module name="consumer-example2" target="1.8" />
+      <module name="springcloudexample" target="1.6" />
+    </bytecodeTargetLevel>
   </component>
 </project>

@@ -8,7 +8,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>consumer-example1</name>
+    <name>consumer-example-without-eureka</name>
     <description>消费者例子2-使用ribbon但没有集成eureka</description>
 
     <parent>

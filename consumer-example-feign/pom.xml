@@ -8,7 +8,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>consumer-example1</name>
+    <name>consumer-example-feign</name>
     <description>消费者例子4-Feign的应用</description>
 
     <parent>

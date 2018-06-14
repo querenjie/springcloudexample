@@ -4,12 +4,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.springcloudexample</groupId>
-    <artifactId>consumer-example2</artifactId>
+    <artifactId>consumer-example-eureka-ribbon</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>consumer-example1</name>
-    <description>消费者例子2-采用properties文件配置ribbon</description>
+    <name>consumer-example-eureka-ribbon</name>
+    <description>消费者例子1</description>
 
     <parent>
         <groupId>com.springcloudexample</groupId>

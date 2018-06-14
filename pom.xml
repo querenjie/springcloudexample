@@ -20,11 +20,13 @@
     <modules>
         <module>eureka-server</module>
         <module>provider-example1</module>
-        <module>consumer-example1</module>
-        <module>consumer-example2</module>
+        <module>consumer-example-eureka-ribbon</module>
+        <module>consumer-example-ribbon-with-propeties</module>
         <module>consumer-example-without-eureka</module>
         <module>consumer-example-feign</module>
         <module>consumer-example-feign-customize</module>
+        <module>consumer-example-eureka-ribbon-hystrix</module>
+        <module>consumer-example-eureka-ribbon-hystrix-propagation</module>
     </modules>
 
 </project>
