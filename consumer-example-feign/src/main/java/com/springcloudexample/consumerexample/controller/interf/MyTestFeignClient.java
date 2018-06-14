@@ -11,7 +11,6 @@ public interface MyTestFeignClient {
      * 这边要注意的是：
      * 1、必须用@RequestMapping而不能用@GetMapping
      * 2、@PathVariable必须要明确写明参数，不能省略。
-     * 3、方法签名必须和提供者服务中的方法签名一样。
      * @param name
      * @return
      */
