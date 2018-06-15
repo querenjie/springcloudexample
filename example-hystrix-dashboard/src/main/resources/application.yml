@@ -1,0 +1,5 @@
+server:
+  port: 8774    #服务注册中心端口号
+spring:
+  application:
+    name: example-hystrix-dashboard
