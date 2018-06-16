@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: example-gateway-zuul
+server:
+  port: 8778
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://querenjie:123456@localhost:8761/eureka/
+    healthcheck:
+      enabled: true
+    #eureka client刷新本地缓存时间
+    #默认30s
+    registry-fetch-interval-seconds: 5
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
+zuul:
+  routes:
+    provider-example1: provider1/**
+  #标注哪些服务不可用
+  #ignoredServices: consumer-example-feign-custominze,consumer-example-feign-hystrix
