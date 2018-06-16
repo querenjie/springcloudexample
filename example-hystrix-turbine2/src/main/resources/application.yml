@@ -1,0 +1,31 @@
+server:
+  port: 8777    #服务注册中心端口号
+spring:
+  application:
+    name: example-hystrix-turbine2
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://querenjie:123456@localhost:8761/eureka/
+    healthcheck:
+      enabled: true
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
+    #服务过期时间配置,超过这个时间没有接收到心跳EurekaServer就会将这个实例剔除
+    #注意，EurekaServer一定要设置eureka.server.eviction-interval-timer-in-ms否则这个配置无效，这个配置一般为服务刷新时间配置的三倍
+    #默认90s
+    lease-expiration-duration-in-seconds: 15
+    #服务刷新时间配置，每隔这个时间会主动心跳一次
+    #默认30s
+    lease-renewal-interval-in-seconds: 5
+turbine:
+  aggregator:
+    clusterConfig: CONSUMER-EXAMPLE-EUREKA-RIBBON-HYSTRIX2
+  appConfig: consumer-example-eureka-ribbon-hystrix2
+
+turbine.instanceUrlSuffix.CONSUMER-EXAMPLE-EUREKA-RIBBON-HYSTRIX2: /ribbon/hystrix.stream
+logging:
+  level:
+    root: INFO
+    com.netflix.turbine.monitor: DEBUG
