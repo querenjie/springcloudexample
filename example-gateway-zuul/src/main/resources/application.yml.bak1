@@ -17,12 +17,6 @@ eureka:
     instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
 zuul:
   routes:
-    #这个必须是一个唯一的编号，可以自己随便定义
-    unique-id:
-      path: /provider1/**
-      service-id: provider-example1
-
-#zuul通过ribbon实现负载均衡
-provider-example1:  #这边是ribbon要请求的微服务的service-id
-  ribbon:
-    listOfServers: http://localhost:8762,http://localhost:8763  #测试时手动启动2个provider-example1服务
+    provider-example1: provider1/**
+  #标注哪些服务不可用
+  #ignoredServices: consumer-example-feign-custominze,consumer-example-feign-hystrix
