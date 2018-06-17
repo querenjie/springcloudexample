@@ -28,6 +28,16 @@
         <module>consumer-example-eureka-ribbon-hystrix</module>
         <module>consumer-example-eureka-ribbon-hystrix-propagation</module>
         <module>consumer-example-feign-hystrix</module>
+        <module>consumer-example-feign-customize-ban-hystrix</module>
+        <module>consumer-example-feign-hystrix-factory</module>
+        <module>example-hystrix-dashboard</module>
+        <module>example-hystrix-turbine</module>
+        <module>consumer-example-eureka-ribbon-hystrix2</module>
+        <module>example-hystrix-turbine2</module>
+        <module>example-gateway-zuul</module>
+        <module>example-gateway-zuul-reg-exp</module>
+        <module>provider-example1-v1</module>
+
     </modules>
 
 </project>
