@@ -21,6 +21,7 @@ zuul:
     unique-id:
       path: /provider1/**
       service-id: provider-example1
+  prefix: /api    #这句话的意思就是要在原来的url上加前缀为api，例如：http://localhost:8778/api/provider1/hi/aa
 #这句话在用于负载均衡的时候非常重要，不可或缺，否则会报500错误。
 ribbon.eureka.enabled: false
 #zuul通过ribbon实现负载均衡
