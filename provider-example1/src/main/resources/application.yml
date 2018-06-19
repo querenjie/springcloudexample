@@ -2,7 +2,7 @@ server:
   port: 8762
 spring:
   application:
-    name: provider-example1-v1
+    name: provider-example1
 eureka:
   client:
     serviceUrl:
