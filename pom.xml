@@ -37,7 +37,8 @@
         <module>example-gateway-zuul</module>
         <module>example-gateway-zuul-reg-exp</module>
         <module>provider-example1-v1</module>
-
+        <module>example-gateway-zuul-fallback</module>
+        <module>example-gateway-zuul-filter</module>
     </modules>
 
 </project>
