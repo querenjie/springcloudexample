@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: example-gateway-zuul-fallback
+server:
+  port: 8781
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://querenjie:123456@localhost:8761/eureka/
+    healthcheck:
+      enabled: true
+    #eureka client刷新本地缓存时间
+    #默认30s
+    registry-fetch-interval-seconds: 5
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
+zuul:
+  routes:
+    #这个必须是一个唯一的编号，可以自己随便定义
+    unique-id:
+      path: /provider1/**
+      service-id: provider-example1
+      #stripPrefix: true
+      #retryable: true
+  #prefix: /api    #这句话的意思就是要在原来的url上加前缀为api，例如：http://localhost:8778/api/provider1/hi/aa
+
+#这句话在用于负载均衡的时候非常重要，不可或缺，否则会报500错误。
+ribbon.eureka.enabled: false
+#zuul通过ribbon实现负载均衡
+provider-example1:  #这边是ribbon要请求的微服务的service-id
+  ribbon:
+    listOfServers: http://localhost:8762,http://localhost:8763  #测试时手动启动2个provider-example1服务
