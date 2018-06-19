@@ -21,7 +21,8 @@ zuul:
     unique-id:
       path: /provider1/**
       service-id: provider-example1
-
+#这句话在用于负载均衡的时候非常重要，不可或缺，否则会报500错误。
+ribbon.eureka.enabled: false
 #zuul通过ribbon实现负载均衡
 provider-example1:  #这边是ribbon要请求的微服务的service-id
   ribbon:
